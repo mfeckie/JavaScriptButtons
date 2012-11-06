@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>PayPal JavaScript Payment Buttons</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
 	<style type="text/css">
 		body {
 			margin: 0 auto;
+			padding: 20px;
 			max-width: 980px;
 			background: url(https://www.paypalobjects.com/webstatic/i/ex_ce2/scr/scr_content-bkgd.png) repeat #F8F8F8;
 			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -60,6 +60,7 @@
 
 		.example pre {
 			margin: 0 -23px;
+			padding: 1em 24px;
 			-webkit-border-radius: 0;
 			-moz-border-radius: 0;
 			border-radius: 0;
@@ -76,8 +77,8 @@
 
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#buynow" data-toggle="tab">Buy Now Buttons</a></li>
-			<li><a href="#hosted" data-toggle="tab">Hosted Buttons</a></li>
 			<li><a href="#cart" data-toggle="tab">Cart Buttons</a></li>
+			<li><a href="#hosted" data-toggle="tab">Hosted Buttons</a></li>
 		</ul>
 
 
@@ -100,22 +101,6 @@
 				</div>
 			</div>
 
-			<div id="hosted" class="tab-pane example">
-				<p>Hosted buttons are extra secure</p>
-
-<pre><code>&lt;script src="paypal-button.js?merchant=6XF3MPZBZV6HU"
-    data-button="cart"
-    data-id="8R63A645E2QB6"
-&gt;&lt;/script&gt;</code></pre>
-
-				<div class="tryit">
-					<script src="paypal-button.js?merchant=6XF3MPZBZV6HU"
-						data-button="cart"
-					    data-id="8R63A645E2QB6"
-					></script>
-				</div>
-			</div>
-
 
 			<div id="cart" class="tab-pane example">
 				<p>Add To Cart buttons lets users add multiple items to their PayPal cart</p>
@@ -134,10 +119,29 @@
 					></script>
 				</div>
 			</div>
+
+
+			<div id="hosted" class="tab-pane example">
+				<p>Hosted buttons are extra secure and provide extra protection to your product data</p>
+
+<pre><code>&lt;script src="paypal-button.js?merchant=6XF3MPZBZV6HU"
+    data-button="cart"
+    data-id="8R63A645E2QB6"
+&gt;&lt;/script&gt;</code></pre>
+
+				<div class="tryit">
+					<script src="paypal-button.js?merchant=6XF3MPZBZV6HU"
+						data-button="cart"
+					    data-id="8R63A645E2QB6"
+					></script>
+				</div>
+			</div>
+
+
 		</div>
 
-	</div>
 
+	</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </body>
