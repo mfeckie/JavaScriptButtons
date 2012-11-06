@@ -41,7 +41,7 @@
 
 		.example {
 			position: relative;
-			margin: 0;
+			margin: 0 0 40px;
 			padding: 22px;
 			background-color: white;
 			border: 1px solid #DDD;
@@ -66,6 +66,20 @@
 			border-radius: 0;
 		}
 
+		.edit {
+			float: right;
+		}
+
+		.editable label {
+			position: relative;
+			height: 3em;
+		}
+
+		.editable input {
+			position: absolute;
+			left: 7em;
+		}
+
 	</style>
 </head>
 <body>
@@ -84,13 +98,33 @@
 
 		<div class="tab-content">
 			<div id="buynow" class="tab-pane example active">
-				<p>Buy Now buttons are for single item purchases</p>
+				<p>Buy Now buttons are for single item purchases <a href="#buyNowModel" class="edit" role="button" data-toggle="modal">Edit</a></p>
 
 <pre><code>&lt;script src="paypal-button.js?merchant=6XF3MPZBZV6HU"
     data-button="buynow"
     data-name="Buy now!"
     data-amount="1.00"
 &gt;&lt;/script&gt;</code></pre>
+
+
+				<div id="buyNowModel" class="editable modal hide fade" role="dialog" aria-hidden="true">
+					<div class="modal-header">
+    					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    					<h4>Edit button</h4>
+    				</div>
+					<div class="modal-body">
+						<form action="#">
+							<label>Merchant ID <input type="text" name="name" value="6XF3MPZBZV6HU" /></label>
+							<label>Name <input type="text" name="name" value="Buy now!" /></label>
+							<label>Number <input type="text" name="name" value="" /></label>
+							<label>Amount <input type="text" name="name" value="1.00" /></label>
+						</form>
+					</div>
+					<div class="modal-footer">
+    					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    					<button class="btn btn-primary">Save changes</button>
+  					</div>
+				</div>
 
 				<div class="tryit">
 					<script src="paypal-button.js?merchant=6XF3MPZBZV6HU"
@@ -141,7 +175,11 @@
 		</div>
 
 
+		<h3>Find out more</h3>
+		<p>This project is hosted on Github.</p>
 	</div>
+
+
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </body>
