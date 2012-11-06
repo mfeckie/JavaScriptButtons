@@ -41,7 +41,7 @@
 
 		.example {
 			position: relative;
-			margin: 0 0 40px;
+			margin: 0 0 30px;
 			padding: 22px;
 			background-color: white;
 			border: 1px solid #DDD;
@@ -75,9 +75,18 @@
 			height: 3em;
 		}
 
-		.editable input {
+		.editable input, .editable select {
 			position: absolute;
 			left: 7em;
+		}
+
+		.modal form {
+			margin: 0;
+			padding: 35px 20px 20px;
+		}
+
+		.modal label {
+			margin: 0;
 		}
 
 	</style>
@@ -87,8 +96,6 @@
 		<h1>PayPal JavaScript payment buttons</h1>
 		<h2>Integrating with PayPal's payment buttons are as easy as including a small snippet of code. We have multiple flavors of buttons to fit your needs:</h2>
 
-
-
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#buynow" data-toggle="tab">Buy Now</a></li>
 			<li><a href="#cart" data-toggle="tab">Add to Cart</a></li>
@@ -96,9 +103,10 @@
 		</ul>
 
 
+
 		<div class="tab-content">
 			<div id="buynow" class="tab-pane example active">
-				<p>Buy Now buttons are perfect for single item purchases <a href="#buyNowModel" class="edit" role="button" data-toggle="modal"><span class="icon icon-edit"></span> Edit</a></p>
+				<p>Buy Now buttons are perfect for single item purchases <a href="#buyNowModal" class="edit" role="button" data-toggle="modal"><span class="icon icon-edit"></span> Customize</a></p>
 
 <pre><code>&lt;script src="paypal-button.js?merchant=6XF3MPZBZV6HU"
     data-button="buynow"
@@ -107,22 +115,19 @@
 &gt;&lt;/script&gt;</code></pre>
 
 
-				<div id="buyNowModel" class="editable modal hide fade" role="dialog" aria-hidden="true">
-					<div class="modal-header">
-    					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    					<h4>Edit this button</h4>
-    				</div>
-					<div class="modal-body">
-						<form action="#">
-							<label>Merchant ID <input type="text" name="name" value="6XF3MPZBZV6HU" /></label>
-							<label>Name <input type="text" name="name" value="Buy now!" /></label>
-							<label>Number <input type="text" name="name" value="" /></label>
-							<label>Amount <input type="text" name="name" value="1.00" /></label>
-						</form>
-					</div>
+				<div id="buyNowModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
+					<form action="#" class="modal-body">
+						<input type="hidden" name="button" value="buynow" />
+						<label>Merchant ID <input type="text" name="merchant" value="6XF3MPZBZV6HU" autocomplete="off" /></label>
+						<label>Name <input type="text" name="name" value="Buy now!" autocomplete="off" /></label>
+						<label>Number <input type="text" name="number" value="" autocomplete="off" /></label>
+						<label>Quantity <input type="text" name="quantity" value="" placeholder="1" autocomplete="off" /></label>
+						<label>Amount <input type="text" name="amount" value="1.00" autocomplete="off" /></label>
+						<label>Shipping <input type="text" name="number" value="" autocomplete="off" /></label>
+						<label>Tax <input type="text" name="number" value="" autocomplete="off" /></label>
+					</form>
 					<div class="modal-footer">
-    					<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    					<button class="btn btn-primary">Save changes</button>
+    					<button class="btn btn-primary" data-dismiss="modal">Update</button>
   					</div>
 				</div>
 
@@ -137,13 +142,30 @@
 
 
 			<div id="cart" class="tab-pane example">
-				<p>Add To Cart buttons lets users add multiple items instantly giving your website a cart</p>
+				<p>Add To Cart buttons lets users add multiple items instantly giving your website a cart <a href="#cartModal" class="edit" role="button" data-toggle="modal"><span class="icon icon-edit"></span> Customize</a></p>
 
 <pre><code>&lt;script src="paypal-button.js?merchant=6XF3MPZBZV6HU"
     data-button="cart"
     data-name="Add to cart!"
     data-amount="1.00"
 &gt;&lt;/script&gt;</code></pre>
+
+
+				<div id="cartModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
+					<form action="#" class="modal-body">
+						<input type="hidden" name="button" value="cart" />
+						<label>Merchant ID <input type="text" name="merchant" value="6XF3MPZBZV6HU" autocomplete="off" /></label>
+						<label>Name <input type="text" name="name" value="Add to cart!" autocomplete="off" /></label>
+						<label>Number <input type="text" name="number" value="" autocomplete="off" /></label>
+						<label>Quantity <input type="text" name="quantity" value="" placeholder="1" autocomplete="off" /></label>
+						<label>Amount <input type="text" name="amount" value="1.00" autocomplete="off" /></label>
+						<label>Shipping <input type="text" name="number" value="" autocomplete="off" /></label>
+						<label>Tax <input type="text" name="number" value="" autocomplete="off" /></label>
+					</form>
+					<div class="modal-footer">
+    					<button class="btn btn-primary" data-dismiss="modal">Update</button>
+  					</div>
+				</div>
 
 				<div class="tryit">
 					<script script src="paypal-button.js?merchant=6XF3MPZBZV6HU"
@@ -156,12 +178,29 @@
 
 
 			<div id="hosted" class="tab-pane example">
-				<p>Hosted buttons are extra secure and provide protection to your product data</p>
+				<p>Hosted buttons are extra secure and provide protection to your product data <a href="#hostedModal" class="edit" role="button" data-toggle="modal"><span class="icon icon-edit"></span> Customize</a></p>
 
 <pre><code>&lt;script src="paypal-button.js?merchant=6XF3MPZBZV6HU"
     data-button="cart"
     data-id="8R63A645E2QB6"
 &gt;&lt;/script&gt;</code></pre>
+
+
+				<div id="hostedModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
+					<form action="#" class="modal-body">
+						<label>Type
+							<select name="button">
+								<option name="cart">cart</cart>
+								<option name="buynow">buynow</cart>
+							</select>
+						</label>
+						<label>Merchant ID <input type="text" name="merchant" value="6XF3MPZBZV6HU" autocomplete="off" /></label>
+						<label>Button ID <input type="text" name="id" value="8R63A645E2QB6" autocomplete="off" /></label>
+					</form>
+					<div class="modal-footer">
+    					<button class="btn btn-primary" data-dismiss="modal">Update</button>
+  					</div>
+				</div>
 
 				<div class="tryit">
 					<script src="paypal-button.js?merchant=6XF3MPZBZV6HU"
@@ -182,5 +221,37 @@
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script>
+
+		$('.modal').on('hide', function () {
+			var data = {},
+				modal = $(this),
+				example = modal.closest('.example'),
+				code = example.find('code'),
+				inputs = modal.find('.modal-body :input'),
+				input, str, key, len, i;
+
+			for (i = 0, len = inputs.length; i < len; i++) {
+				input = $(inputs[i]);
+
+				if (input.val()) {
+					data[input.attr('name')] = input.val();
+				}
+			}
+
+			str = '<script src="paypal-button.js?merchant=' + data.merchant + "\n";
+
+			delete data.merchant;
+
+			for (key in data) {
+				str += '    data-' + key + '="' + data[key] + '"' + "\n";
+			}
+
+			str += '></sc' + 'ript>';
+
+			code.text(str);
+		});
+
+	</script>
 </body>
 </html>
