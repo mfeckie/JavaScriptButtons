@@ -118,13 +118,13 @@
 				<div id="buyNowModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
 					<form action="#" class="modal-body">
 						<input type="hidden" name="button" value="buynow" />
-						<label>Merchant ID <input type="text" name="merchant" value="6XF3MPZBZV6HU" autocomplete="off" /></label>
+						<label>Merchant ID <input type="text" name="business" value="6XF3MPZBZV6HU" autocomplete="off" /></label>
 						<label>Name <input type="text" name="name" value="Buy now!" autocomplete="off" /></label>
 						<label>Number <input type="text" name="number" value="" autocomplete="off" /></label>
 						<label>Quantity <input type="text" name="quantity" value="" placeholder="1" autocomplete="off" /></label>
 						<label>Amount <input type="text" name="amount" value="1.00" autocomplete="off" /></label>
-						<label>Shipping <input type="text" name="number" value="" autocomplete="off" /></label>
-						<label>Tax <input type="text" name="number" value="" autocomplete="off" /></label>
+						<label>Shipping <input type="text" name="shipping" value="" autocomplete="off" /></label>
+						<label>Tax <input type="text" name="tax" value="" autocomplete="off" /></label>
 					</form>
 					<div class="modal-footer">
     					<button class="btn btn-primary" data-dismiss="modal">Update</button>
@@ -154,13 +154,13 @@
 				<div id="cartModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
 					<form action="#" class="modal-body">
 						<input type="hidden" name="button" value="cart" />
-						<label>Merchant ID <input type="text" name="merchant" value="6XF3MPZBZV6HU" autocomplete="off" /></label>
+						<label>Merchant ID <input type="text" name="business" value="6XF3MPZBZV6HU" autocomplete="off" /></label>
 						<label>Name <input type="text" name="name" value="Add to cart!" autocomplete="off" /></label>
 						<label>Number <input type="text" name="number" value="" autocomplete="off" /></label>
 						<label>Quantity <input type="text" name="quantity" value="" placeholder="1" autocomplete="off" /></label>
 						<label>Amount <input type="text" name="amount" value="1.00" autocomplete="off" /></label>
-						<label>Shipping <input type="text" name="number" value="" autocomplete="off" /></label>
-						<label>Tax <input type="text" name="number" value="" autocomplete="off" /></label>
+						<label>Shipping <input type="text" name="shipping" value="" autocomplete="off" /></label>
+						<label>Tax <input type="text" name="tax" value="" autocomplete="off" /></label>
 					</form>
 					<div class="modal-footer">
     					<button class="btn btn-primary" data-dismiss="modal">Update</button>
@@ -194,7 +194,7 @@
 								<option name="buynow">buynow</cart>
 							</select>
 						</label>
-						<label>Merchant ID <input type="text" name="merchant" value="6XF3MPZBZV6HU" autocomplete="off" /></label>
+						<label>Merchant ID <input type="text" name="business" value="6XF3MPZBZV6HU" autocomplete="off" /></label>
 						<label>Button ID <input type="text" name="id" value="8R63A645E2QB6" autocomplete="off" /></label>
 					</form>
 					<div class="modal-footer">
@@ -228,9 +228,11 @@
 				modal = $(this),
 				example = modal.closest('.example'),
 				code = example.find('code'),
+				tryit = example.find('.tryit'),
 				inputs = modal.find('.modal-body :input'),
-				input, str, key, len, i;
+				input, merchant, el, len, i;
 
+			// Build a map out of the form inputs
 			for (i = 0, len = inputs.length; i < len; i++) {
 				input = $(inputs[i]);
 
@@ -239,17 +241,21 @@
 				}
 			}
 
-			str = '<script src="paypal-button.js?merchant=' + data.merchant + "\n";
-
-			delete data.merchant;
+			// Create a script tag to use as the HTML
+			el = document.createElement('script');
+			el.src = 'paypal-button.js?merchant=' + data.business;
 
 			for (key in data) {
-				str += '    data-' + key + '="' + data[key] + '"' + "\n";
+				if (key !== 'business') {
+					el.setAttribute('data-' + key, data[key]);
+				}
 			}
 
-			str += '></sc' + 'ript>';
+			code.text(el.outerHTML.replace(/data-/g, "\n    data-").replace("></" + "script>", "\n></" + "script>"));
 
-			code.text(str);
+			// Update the button
+			tryit.empty();
+			PAYPAL.apps.ButtonFactory.create(tryit[0], data.button, data);
 		});
 
 	</script>
