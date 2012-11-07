@@ -70,25 +70,10 @@
 			float: right;
 		}
 
-		.editable label {
-			position: relative;
-			height: 3em;
-		}
-
-		.editable input, .editable select {
-			position: absolute;
-			left: 7em;
-		}
-
 		.modal form {
 			margin: 0;
 			padding: 35px 20px 20px;
 		}
-
-		.modal label {
-			margin: 0;
-		}
-
 	</style>
 </head>
 <body>
@@ -116,16 +101,47 @@
 
 
 				<div id="buyNowModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
-					<form action="#" class="modal-body">
+					<form action="#" class="modal-body form-horizontal">
 						<input type="hidden" name="button" value="buynow" />
-						<label>Merchant ID <input type="text" name="business" value="6XF3MPZBZV6HU" autocomplete="off" /></label>
-						<label>Name <input type="text" name="name" value="Buy now!" autocomplete="off" /></label>
-						<label>Number <input type="text" name="number" value="" autocomplete="off" /></label>
-						<label>Quantity <input type="text" name="quantity" value="" placeholder="1" autocomplete="off" /></label>
-						<label>Amount <input type="text" name="amount" value="1.00" autocomplete="off" /></label>
-						<label>Shipping <input type="text" name="shipping" value="" autocomplete="off" /></label>
-						<label>Tax <input type="text" name="tax" value="" autocomplete="off" /></label>
+						<div class="control-group">
+							<label class="control-label" for="buyNowMerchant">Merchant</label>
+							<div class="controls">
+								<input type="text" id="buyNowMerchant" name="business" value="6XF3MPZBZV6HU" autocomplete="off" />
+								<span class="help-inline">Email address or merchant ID</span>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="buyNowName">Name</label>
+							<div class="controls">
+								<input type="text" id="buyNowName" name="name" value="Buy now!" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="buyNowQuantity">Quantity</label>
+							<div class="controls">
+								<input type="text" id="buyNowQuantity" name="quantity" value="" placeholder="1" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="buyNowAmount">Amount</label>
+							<div class="controls">
+								<input type="text" id="buyNowAmount" name="amount" value="1.00" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="buyNowShipping">Shipping</label>
+							<div class="controls">
+								<input type="text" id="buyNowShipping" name="shipping" value="" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="buyNowTax">Tax</label>
+							<div class="controls">
+								<input type="text" id="buyNowTax" name="tax" value="" autocomplete="off" />
+							</div>
+						</div>
 					</form>
+
 					<div class="modal-footer">
     					<button class="btn btn-primary" data-dismiss="modal">Update</button>
   					</div>
@@ -152,15 +168,45 @@
 
 
 				<div id="cartModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
-					<form action="#" class="modal-body">
+					<form action="#" class="modal-body form-horizontal">
 						<input type="hidden" name="button" value="cart" />
-						<label>Merchant ID <input type="text" name="business" value="6XF3MPZBZV6HU" autocomplete="off" /></label>
-						<label>Name <input type="text" name="name" value="Add to cart!" autocomplete="off" /></label>
-						<label>Number <input type="text" name="number" value="" autocomplete="off" /></label>
-						<label>Quantity <input type="text" name="quantity" value="" placeholder="1" autocomplete="off" /></label>
-						<label>Amount <input type="text" name="amount" value="1.00" autocomplete="off" /></label>
-						<label>Shipping <input type="text" name="shipping" value="" autocomplete="off" /></label>
-						<label>Tax <input type="text" name="tax" value="" autocomplete="off" /></label>
+						<div class="control-group">
+							<label class="control-label" for="cartMerchant">Merchant</label>
+							<div class="controls">
+								<input type="text" id="cartMerchant" name="business" value="6XF3MPZBZV6HU" autocomplete="off" />
+								<span class="help-inline">Email address or merchant ID</span>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="cartName">Name</label>
+							<div class="controls">
+								<input type="text" id="cartName" name="name" value="Add to cart!" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="cartQuantity">Quantity</label>
+							<div class="controls">
+								<input type="text" id="cartQuantity" name="quantity" value="" placeholder="1" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="cartAmount">Amount</label>
+							<div class="controls">
+								<input type="text" id="cartAmount" name="amount" value="1.00" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="cartShipping">Shipping</label>
+							<div class="controls">
+								<input type="text" id="cartShipping" name="shipping" value="" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="cartTax">Tax</label>
+							<div class="controls">
+								<input type="text" id="cartTax" name="tax" value="" autocomplete="off" />
+							</div>
+						</div>
 					</form>
 					<div class="modal-footer">
     					<button class="btn btn-primary" data-dismiss="modal">Update</button>
@@ -187,15 +233,29 @@
 
 
 				<div id="hostedModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
-					<form action="#" class="modal-body">
-						<label>Type
-							<select name="button">
-								<option name="cart">cart</cart>
-								<option name="buynow">buynow</cart>
-							</select>
-						</label>
-						<label>Merchant ID <input type="text" name="business" value="6XF3MPZBZV6HU" autocomplete="off" /></label>
-						<label>Button ID <input type="text" name="id" value="8R63A645E2QB6" autocomplete="off" /></label>
+					<form action="#" class="modal-body form-horizontal">
+						<div class="control-group">
+							<label class="control-label" for="hostedMerchant">Merchant</label>
+							<div class="controls">
+								<input type="text" id="hostedMerchant" name="business" value="6XF3MPZBZV6HU" autocomplete="off" />
+								<span class="help-inline">Email address or merchant ID</span>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="hostedButtonId">Button ID</label>
+							<div class="controls">
+								<input type="text" id="hostedButtonId" name="id" value="8R63A645E2QB6" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="hostedType">Button type</label>
+							<div class="controls">
+								<select id="hostedType" name="button">
+									<option name="cart">cart</cart>
+									<option name="buynow">buynow</cart>
+								</select>
+							</div>
+						</div>
 					</form>
 					<div class="modal-footer">
     					<button class="btn btn-primary" data-dismiss="modal">Update</button>
@@ -215,7 +275,7 @@
 
 
 		<h3>Find out more</h3>
-		<p>This project is <a href="https://github.paypal.com/jeharrell/JSButtons/">hosted on Github</a>. Problems can be filed with the <a href="https://github.paypal.com/jeharrell/JSButtons/issues">issue tracker</a>.</p>
+		<p>This project is <a href="https://github.paypal.com/jeharrell/JSButtons/">hosted on Github</a>. Feature requests and issues can be filed on the <a href="https://github.paypal.com/jeharrell/JSButtons/issues">issue tracker</a>.</p>
 	</div>
 
 
@@ -243,7 +303,12 @@
 
 			// Create a script tag to use as the HTML
 			el = document.createElement('script');
-			el.src = 'paypal-button.js?merchant=' + data.business;
+
+			if (data.button === 'cart') {
+				el.src = 'paypal-button-minicart.js?merchant=' + data.business;
+			} else {
+				el.src = 'paypal-button.js?merchant=' + data.business;
+			}
 
 			for (key in data) {
 				if (key !== 'business') {
