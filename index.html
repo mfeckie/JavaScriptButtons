@@ -85,6 +85,7 @@
 			<li class="active"><a href="#buynow" data-toggle="tab">Buy Now</a></li>
 			<li><a href="#cart" data-toggle="tab">Add to Cart</a></li>
 			<li><a href="#hosted" data-toggle="tab">Hosted</a></li>
+			<li><a href="#qr" data-toggle="tab">QR Codes</a></li>
 		</ul>
 
 
@@ -95,7 +96,7 @@
 
 <pre><code>&lt;script src="paypal-button.min.js?merchant=6XF3MPZBZV6HU"
     data-button="buynow"
-    data-name="Buy now!"
+    data-name="My product"
     data-amount="1.00"
 &gt;&lt;/script&gt;</code></pre>
 
@@ -113,7 +114,7 @@
 						<div class="control-group">
 							<label class="control-label" for="buyNowName">Name</label>
 							<div class="controls">
-								<input type="text" id="buyNowName" name="name" value="Buy now!" autocomplete="off" />
+								<input type="text" id="buyNowName" name="name" value="My product" autocomplete="off" />
 							</div>
 						</div>
 						<div class="control-group">
@@ -150,7 +151,7 @@
 				<div class="tryit">
 					<script src="dist/paypal-button.min.js?merchant=6XF3MPZBZV6HU"
 					    data-button="buynow"
-					    data-name="Buy now!"
+					    data-name="My product!"
 					    data-amount="1.00"
 					></script>
 				</div>
@@ -162,7 +163,7 @@
 
 <pre><code>&lt;script src="paypal-button-minicart.min.js?merchant=6XF3MPZBZV6HU"
     data-button="cart"
-    data-name="Add to cart!"
+    data-name="Product in your cart"
     data-amount="1.00"
 &gt;&lt;/script&gt;</code></pre>
 
@@ -180,7 +181,7 @@
 						<div class="control-group">
 							<label class="control-label" for="cartName">Name</label>
 							<div class="controls">
-								<input type="text" id="cartName" name="name" value="Add to cart!" autocomplete="off" />
+								<input type="text" id="cartName" name="name" value="Product in your cart" autocomplete="off" />
 							</div>
 						</div>
 						<div class="control-group">
@@ -216,7 +217,7 @@
 				<div class="tryit">
 					<script src="dist/paypal-button-minicart.min.js?merchant=6XF3MPZBZV6HU"
 					    data-button="cart"
-					    data-name="Add to cart!"
+					    data-name="Product in your cart"
 					    data-amount="1.00"
 					></script>
 				</div>
@@ -266,6 +267,75 @@
 					<script src="dist/paypal-button.min.js?merchant=6XF3MPZBZV6HU"
 						data-button="cart"
 					    data-id="8R63A645E2QB6"
+					></script>
+				</div>
+			</div>
+
+
+			<div id="qr" class="tab-pane example">
+				<p>Buy Now buttons are perfect for single item purchases <a href="#qrModal" class="edit" role="button" data-toggle="modal"><span class="icon icon-edit"></span> Customize</a></p>
+
+<pre><code>&lt;script src="paypal-button.min.js?merchant=6XF3MPZBZV6HU"
+    data-button="qr"
+    data-name="Product via QR code"
+    data-amount="1.00"
+    data-size="250"
+&gt;&lt;/script&gt;</code></pre>
+
+
+				<div id="qrModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
+					<form action="#" class="modal-body form-horizontal">
+						<input type="hidden" name="button" value="qr" />
+						<div class="control-group">
+							<label class="control-label" for="qrMerchant">Merchant</label>
+							<div class="controls">
+								<input type="text" id="qrMerchant" name="business" value="6XF3MPZBZV6HU" autocomplete="off" />
+								<span class="help-inline">Email address or merchant ID</span>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="qrName">Name</label>
+							<div class="controls">
+								<input type="text" id="qrName" name="name" value="Product via QR code" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="qrQuantity">Quantity</label>
+							<div class="controls">
+								<input type="text" id="qrQuantity" name="quantity" value="" placeholder="1" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="qrAmount">Amount</label>
+							<div class="controls">
+								<input type="text" id="qrAmount" name="amount" value="1.00" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="qrShipping">Shipping</label>
+							<div class="controls">
+								<input type="text" id="qrShipping" name="shipping" value="" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="qrTax">Tax</label>
+							<div class="controls">
+								<input type="text" id="qrTax" name="tax" value="" autocomplete="off" />
+							</div>
+						</div>
+					</form>
+
+					<div class="modal-footer">
+    					<button class="btn btn-primary" data-dismiss="modal">Update</button>
+  					</div>
+				</div>
+
+				<div class="tryit">
+					<script src="dist/paypal-button.min.js?merchant=6XF3MPZBZV6HU"
+					    data-button="qr"
+					    data-name="Product via QR code"
+					    data-amount="1.00"
+					    data-size="250"
 					></script>
 				</div>
 			</div>
