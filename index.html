@@ -344,8 +344,17 @@
 		</div>
 
 
+		<h3>Browser support</h3>
+		<p>The JavaScript buttons have been tested and work in all modern browsers including:</p>
+		<ul>
+			<li>Chrome</li>
+			<li>Safari</li>
+			<li>Firefox</li>
+			<li>Internet Explorer 7+</li>
+		</ul>
+
 		<h3>Find out more</h3>
-		<p>This project is <a href="https://github.paypal.com/jeharrell/JSButtons/">hosted on Github</a>. Feature requests and issues can be filed on the <a href="https://github.paypal.com/jeharrell/JSButtons/issues">issue tracker</a>.</p>
+		<p>This project is <a href="https://github.com/paypal/JavaScriptButtons">hosted on Github</a>. Feature requests and issues can be filed on the <a href="https://github.com/paypal/JavaScriptButtons/issues">issue tracker</a>.</p>
 	</div>
 
 
@@ -390,7 +399,7 @@
 
 			// Update the button
 			tryit.empty();
-			PAYPAL.apps.ButtonFactory.create(tryit[0], data.button, data);
+			PAYPAL.apps.ButtonFactory.create(data, data.button, tryit[0]);
 		});
 
 	</script>
