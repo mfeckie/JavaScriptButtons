@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>PayPal JavaScript Payment Buttons</title>
+	<title>PayPal Payment Buttons</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<style type="text/css">
 		body {
@@ -94,8 +94,8 @@
 </head>
 <body>
 	<div id="page">
-		<h1>PayPal JavaScript payment buttons</h1>
-		<h2>Integrating with PayPal's payment buttons are as easy as including a small snippet of code. We have multiple flavors of buttons to fit your needs:</h2>
+		<h1>PayPal payment buttons</h1>
+		<h2>Integrating with the unofficial PayPal JavaScript buttons are as easy as including a small snippet of code. We have multiple flavors of buttons to fit your needs:</h2>
 
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#buynow" data-toggle="tab">Buy Now</a></li>
@@ -244,7 +244,6 @@
 				<p>Hosted buttons are extra secure and provide protection to your product data <a href="#hostedModal" class="edit" role="button" data-toggle="modal"><span class="icon icon-edit"></span> Customize</a></p>
 
 <pre><code>&lt;script src="paypal-button.min.js?merchant=6XF3MPZBZV6HU"
-    data-button="cart"
     data-id="8R63A645E2QB6"
 &gt;&lt;/script&gt;</code></pre>
 
@@ -264,15 +263,6 @@
 								<input type="text" id="hostedButtonId" name="id" value="8R63A645E2QB6" autocomplete="off" />
 							</div>
 						</div>
-						<div class="control-group">
-							<label class="control-label" for="hostedType">Button type</label>
-							<div class="controls">
-								<select id="hostedType" name="button">
-									<option name="cart">cart</cart>
-									<option name="buynow">buynow</cart>
-								</select>
-							</div>
-						</div>
 					</form>
 					<div class="modal-footer">
     					<button class="btn btn-primary" data-dismiss="modal">Update</button>
@@ -281,7 +271,6 @@
 
 				<div class="tryit">
 					<script src="dist/paypal-button.min.js?merchant=6XF3MPZBZV6HU"
-						data-button="cart"
 					    data-id="8R63A645E2QB6"
 					></script>
 				</div>
