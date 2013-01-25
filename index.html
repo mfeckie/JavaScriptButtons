@@ -389,22 +389,24 @@
 				input = $(inputs[i]);
 
 				if (input.val()) {
-					data[input.attr('name')] = input.val();
+					data[input.attr('name')] = {
+						value: input.val()
+					};
 				}
 			}
 
 			// Create a script tag to use as the HTML
 			el = document.createElement('script');
 
-			if (data.button === 'cart') {
-				el.src = 'paypal-button-minicart.js?merchant=' + data.business;
+			if (data.button.value === 'cart') {
+				el.src = 'paypal-button-minicart.js?merchant=' + data.business.value;
 			} else {
-				el.src = 'paypal-button.js?merchant=' + data.business;
+				el.src = 'paypal-button.js?merchant=' + data.business.value;
 			}
 
 			for (key in data) {
 				if (key !== 'business') {
-					el.setAttribute('data-' + key, data[key]);
+					el.setAttribute('data-' + key, data[key].value);
 				}
 			}
 
@@ -412,7 +414,7 @@
 
 			// Update the button
 			tryit.empty();
-			PAYPAL.apps.ButtonFactory.create(data, data.button, tryit[0]);
+			PAYPAL.apps.ButtonFactory.create(data.business.value, data, data.button, tryit[0]);
 		});
 
 	</script>
