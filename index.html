@@ -100,7 +100,7 @@
 
 		<p>Pick a button, click <strong>Customize</strong> to make it your own, and try the generated button to make a PayPal payment.</p>
 		<p><small><strong>Important:</strong> Payments made using this code will be live and not Sandbox test payments.</small></p>
-	
+
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#buynow" data-toggle="tab">Buy Now</a></li>
 			<li><a href="#cart" data-toggle="tab">Add to Cart</a></li>
@@ -351,7 +351,7 @@
 
 
 		</div>
-		
+
 		<a name="addpayment"></a>
 		<h3>Add payment buttons to your site</h3>
 		<p>PayPal makes it easy to accept payments on a website, whether it&apos;s a mobile device, tablet, or PC. Just copy and paste a short HTML snippet on your website to add a payment button or a shopping cart.</p>
@@ -432,7 +432,7 @@
 			// Create a script tag to use as the HTML
 			el = document.createElement('script');
 
-			if (data.button.value === 'cart') {
+			if (data.button && data.button.value === 'cart') {
 				el.src = 'paypal-button-minicart.js?merchant=' + data.business.value;
 			} else {
 				el.src = 'paypal-button.js?merchant=' + data.business.value;
