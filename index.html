@@ -248,7 +248,7 @@
 				<p>Hosted buttons are extra secure and provide protection to your product data <a href="#hostedModal" class="edit" role="button" data-toggle="modal"><span class="icon icon-edit"></span> Customize</a></p>
 
 <pre><code>&lt;script src="paypal-button.min.js?merchant="
-    data-id=""
+    data-id="`"
 &gt;&lt;/script&gt;</code></pre>
 
 
@@ -422,11 +422,9 @@
 			for (i = 0, len = inputs.length; i < len; i++) {
 				input = $(inputs[i]);
 
-				if (input.val()) {
-					data[input.attr('name')] = {
-						value: input.val()
-					};
-				}
+				data[input.attr('name')] = {
+					value: input.val()
+				};
 			}
 
 			// Create a script tag to use as the HTML
