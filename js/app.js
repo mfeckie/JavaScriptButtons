@@ -19,7 +19,7 @@
 			tryit = example.find('.tryit'),
 			inputs = modal.find('.modal-body :input'),
 			requiredInputs = modal.find('[required="required"]'),
-			input, merchant, el, len, i, key;
+			input, merchant, el, len, i, key, button;
 
 
 		// Don't update if we don't have all of the required inputs
@@ -65,8 +65,17 @@
 		code.text(el.outerHTML.replace(/data-/g, "\n    data-").replace("></" + "script>", "\n></" + "script>"));
 
 		// Update the button
+		button = PAYPAL.apps.ButtonFactory.create(data.business.value, data, data.button.value);
+		button = $(button);
+		button.css('display', 'none');
+
 		tryit.empty();
-		PAYPAL.apps.ButtonFactory.create(data.business.value, data, data.button.value, tryit[0]);
+		tryit.append(button);
+		tryit.animate({
+			height: (button.height() || 130) * 2
+		}, 300, function () {
+			button.fadeTo(300, 1);
+		});
 
 		// Close the modal
 		modal.modal('hide');
