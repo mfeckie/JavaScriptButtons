@@ -15,7 +15,6 @@
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#buynow" data-toggle="tab">Buy Now</a></li>
 			<li><a href="#cart" data-toggle="tab">Add to Cart</a></li>
-			<li><a href="#hosted" data-toggle="tab">Hosted</a></li>
 			<li><a href="#qr" data-toggle="tab">QR Codes</a></li>
 		</ul>
 
@@ -153,45 +152,9 @@
 			</div>
 
 
-			<div id="hosted" class="tab-pane example">
-				<p>Hosted buttons are extra secure and provide protection to your product data <a href="#hostedModal" class="edit" role="button" data-toggle="modal"><span class="icon icon-edit"></span> Customize</a></p>
-
-<pre><code>&lt;script src="paypal-button.min.js?merchant="
-    data-id="`"
-&gt;&lt;/script&gt;</code></pre>
-
-
-				<div id="hostedModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
-					<form action="#" class="modal-body form-horizontal">
-						<div class="control-group">
-							<label class="control-label" for="hostedMerchant">Merchant</label>
-							<div class="controls">
-								<input type="text" id="hostedMerchant" name="business" value="" autocomplete="off" />
-								<span class="help-inline">Email address or merchant ID</span>
-							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label" for="hostedButtonId">Button ID</label>
-							<div class="controls">
-								<input type="text" id="hostedButtonId" name="id" value="" autocomplete="off" />
-							</div>
-						</div>
-					</form>
-					<div class="modal-footer">
-    					<button class="btn btn-primary" data-dismiss="modal">Update</button>
-  					</div>
-				</div>
-
-				<div class="tryit">
-					<script src="dist/paypal-button.min.js?merchant="
-					    data-id="8R63A645E2QB6"
-					></script>
-				</div>
-			</div>
-
 
 			<div id="qr" class="tab-pane example">
-				<p>Buy Now buttons are perfect for single item purchases <a href="#qrModal" class="edit" role="button" data-toggle="modal"><span class="icon icon-edit"></span> Customize</a></p>
+				<p>QR codes are ideal for allowing quick mobile payments <a href="#qrModal" class="edit" role="button" data-toggle="modal"><span class="icon icon-edit"></span> Customize</a></p>
 
 <pre><code>&lt;script src="paypal-button.min.js?merchant="
     data-button="qr"
@@ -263,11 +226,10 @@
 
 
 		<h3>Add payment buttons to your site</h3>
-		<p>PayPal makes it easy to accept payments on a website, whether it&apos;s a mobile device, tablet, or PC.</p>
 
 		<ol>
 			<li>
-				<p>Get your Merchant account ID or email address. You'll need to add it to the code above. If you&apos;re logged in to PayPal, you can get find it on your <a target="_blank" href="https://www.paypal.com/webapps/customerprofile/summary.view">account
+				<p>Get your Merchant ID or email address. You'll need to add it to the code above. If you&apos;re logged in to PayPal and have a business account, you can get your Merchant ID on your <a target="_blank" href="https://www.paypal.com/webapps/customerprofile/summary.view">account
 				profile page</a>.</p>
 			</li>
 			<li>
@@ -296,7 +258,6 @@
 		</ol>
 
 		<p>It&apos;s that simple. No need to deal with a long confusing form. You can update product name and pricing directly on your site. These JavaScript buttons are easy, fast, and secure.</p>
-		<p>If you are familiar with the <a href="https://www.x.com/developers/paypal/documentation-tools/paypal-payments-standard/ht_create-pps-buttons">classic PayPal button solution</a>, it is still available.</p>
 
 		<h3>Browser support</h3>
 		<p>The JavaScript buttons have been tested and work in all modern browsers including: Chrome, Safari, Firefox and Internet Explorer 7+.
