@@ -36,5 +36,5 @@ $('.modal').on('hide', function () {
 
 	// Update the button
 	tryit.empty();
-	PAYPAL.apps.ButtonFactory.create(data.business.value, data, data.button, tryit[0]);
+	PAYPAL.apps.ButtonFactory.create(data.business.value, data, data.button.value, tryit[0]);
 });
