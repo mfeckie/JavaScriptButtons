@@ -27,7 +27,7 @@ $('.modal').on('hide', function () {
 	}
 
 	for (key in data) {
-		if (key !== 'business') {
+		if (key !== 'business' && data[key].value !== '') {
 			el.setAttribute('data-' + key, data[key].value);
 		}
 	}
