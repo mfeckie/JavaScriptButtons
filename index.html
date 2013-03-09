@@ -10,20 +10,18 @@
 <body>
 	<div id="page">
 		<h1>PayPal payment buttons</h1>
-		<p>Integrating with the experimental PayPal JavaScript buttons is as easy as including a small snippet of code. We have multiple flavors of buttons to fit your needs.</p>
+		<p>Integrating with the experimental PayPal JavaScript buttons is as easy as including a small snippet of code. To get started:</p>
 
 		<ol>
 			<li><a href="#custom">Customize your button</a></li>
 			<li><a href="#addbutton">Add the button to your site</a></li>
 		</ol>
 
-		<a name="custom"></a>
-		<h3>Customize your button</h3>
+		<h3 id="custom">Customize your button</h3>
 		<ol>
-			<li>Click <strong>Customize</strong> to customize your button with your merchant ID, product name, and price using the option.</li>
-			<li>Click on the generated button to make a PayPal payment.</li>
+			<li>Click <strong>Customize</strong> to customize your button with your merchant ID, product name, price and other options.</li>
+			<li>Click on the generated button to test your button.</li>
 		</ol>
-		<strong>Important:</strong> Payments made using this code will be live and not Sandbox test payments.
 
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#buynow" data-toggle="tab">Buy Now</a></li>
@@ -237,9 +235,8 @@
 		</div>
 		<p><em>Important:</em> Payments made using this code will be live and not test payments.</p>
 
-		<a name="addbutton"></a>
-		<h3>Add the button to your site</h3>
 
+		<h3 id="addbutton">Add the button to your site</h3>
 		<ol>
 			<li>
 				<p>Get your Merchant ID or email address. You'll need to add it to the code above. If you&apos;re logged in to PayPal and have a business account, you can get your Merchant ID on your <a target="_blank" href="https://www.paypal.com/webapps/customerprofile/summary.view">account
@@ -267,6 +264,9 @@
 				<p>Copy and paste the HTML snippet you customized above, and you're ready to start selling!</p>
 			</li>
 		</ol>
+
+		<h3>Customization</h3>
+		<p>For advanced needs, there's a JavaScript API that can be used to pragmatically create buttons, localization support, and the ability to create user-editable inputs. Find out how in the <a href="https://github.com/paypal/JavaScriptButtons#editable-fields">README</a> file.
 
 		<h3>Browser support</h3>
 		<p>The JavaScript buttons have been tested and work in all modern browsers including: Chrome, Safari, Firefox and Internet Explorer 7+.
