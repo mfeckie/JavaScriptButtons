@@ -12,7 +12,7 @@ h1, h2, h3 {
 }
 
 h1 {
-	margin: 38px 0 0 0;
+	margin: 10px 0 20px 0;
 	font-size: 38px;
 	line-height: 45px;
 	color: #0079C1;
@@ -38,7 +38,7 @@ h3 {
 .example {
 	position: relative;
 	margin: 0;
-	padding: 22px;
+	padding: 22px 22px 11px;
 	background-color: white;
 	border: 1px solid #DDD;
 	border-top: 0;
