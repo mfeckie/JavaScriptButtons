@@ -26,6 +26,7 @@
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#buynow" data-toggle="tab">Buy Now</a></li>
 			<li><a href="#cart" data-toggle="tab">Add to Cart</a></li>
+			<li><a href="#donate" data-toggle="tab">Donate</a></li>
 			<li><a href="#qr" data-toggle="tab">QR Codes</a></li>
 		</ul>
 
@@ -99,7 +100,7 @@
 
 
 			<div id="cart" class="tab-pane example">
-				<p>Add To Cart buttons lets users add multiple items instantly giving your website a cart <a href="#cartModal" class="edit" role="button" data-toggle="modal" data-keyboard="true"><span class="icon icon-edit"></span> Customize</a></p>
+				<p>Add To Cart buttons let users add multiple items instantly giving your website a cart <a href="#cartModal" class="edit" role="button" data-toggle="modal" data-keyboard="true"><span class="icon icon-edit"></span> Customize</a></p>
 
 <pre><code>&lt;script src="paypal-button-minicart.min.js?merchant=YOUR_MERCHANT_ID"
     data-button="cart"
@@ -159,6 +160,73 @@
 					<script src="dist/paypal-button-minicart.min.js?merchant="
 					    data-button="cart"
 					    data-name="Product in your cart"
+					    data-amount="1.00"
+					></script>
+				</div>
+			</div>
+
+			<div id="donate" class="tab-pane example">
+				<p>Donate buttons are great for accepting donations from users <a href="#donateModal" class="edit" role="button" data-toggle="modal" data-keyboard="true"><span class="icon icon-edit"></span> Customize</a></p>
+
+<pre><code>&lt;script src="paypal-button.min.js?merchant=YOUR_MERCHANT_ID"
+    data-button="donate"
+    data-name="My product"
+    data-amount="1.00"
+&gt;&lt;/script&gt;</code></pre>
+
+
+				<div id="donateModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
+					<form action="#" class="modal-body form-horizontal">
+						<input type="hidden" name="button" value="donate" />
+						<div class="control-group">
+							<label class="control-label" for="buyNowMerchant">Merchant</label>
+							<div class="controls">
+								<input type="text" id="buyNowMerchant" name="business" required="required" value="" autocomplete="off" />
+								<span class="help-inline">Email address or merchant ID</span>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="buyNowName">Name</label>
+							<div class="controls">
+								<input type="text" id="buyNowName" name="name" required="required" value="My product" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="buyNowQuantity">Quantity</label>
+							<div class="controls">
+								<input type="text" id="buyNowQuantity" name="quantity" value="" placeholder="1" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="buyNowAmount">Amount</label>
+							<div class="controls">
+								<input type="text" id="buyNowAmount" name="amount" required="required" value="1.00" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="buyNowShipping">Shipping</label>
+							<div class="controls">
+								<input type="text" id="buyNowShipping" name="shipping" value="" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="buyNowTax">Tax</label>
+							<div class="controls">
+								<input type="text" id="buyNowTax" name="tax" value="" autocomplete="off" />
+							</div>
+						</div>
+					</form>
+
+					<div class="modal-footer">
+						<button class="btn" data-dismiss="modal">Close</button>
+    					<button class="btn btn-primary" data-modal-save="true">Update</button>
+  					</div>
+				</div>
+
+				<div class="tryit">
+					<script src="dist/paypal-button.min.js?merchant="
+					    data-button="donate"
+					    data-name="My product!"
 					    data-amount="1.00"
 					></script>
 				</div>
