@@ -240,9 +240,9 @@
 <pre><code>&lt;script src="paypal-button.min.js?merchant=YOUR_MERCHANT_ID"
     data-button="subscribe"
     data-name="My product"
-    data-a3="1.00"
-    data-p3="1"
-    data-t3="M"
+    data-amount="1.00"
+    data-recurrences="1"
+    data-period="M"
 &gt;&lt;/script&gt;</code></pre>
 
 
@@ -263,21 +263,26 @@
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="buyNowRecurringAmount">Recurring amount</label>
+							<label class="control-label" for="buyNowRecurringAmount">Amount</label>
 							<div class="controls">
-								<input type="text" id="buyNowRecurringAmount" name="a3" value="" autocomplete="off" />
+								<input type="text" id="buyNowRecurringAmount" name="amount" value="" autocomplete="off" />
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="buyNowNumberOfPeriods">Number of  Periods</label>
+							<label class="control-label" for="buyNowNumberOfPeriods">Recurrences</label>
 							<div class="controls">
-								<input type="text" id="buyNowNumberOfPeriods" name="p3" value="" autocomplete="off" />
+								<input type="text" id="buyNowNumberOfPeriods" name="recurrences" value="" autocomplete="off" />
 							</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label" for="buyNowPeriodType">Type of Period</label>
 							<div class="controls">
-								<input type="text" id="buyNowPeriodType" name="t3" value="" autocomplete="off" />
+								<select id="buyNowPeriodType" name="period">
+									<option value="D">Days</option>
+									<option value="W">Weeks</option>
+									<option value="M">Months</option>
+									<option value="Y">Years</option>
+								</select>
 							</div>
 						</div>
 					</form>
