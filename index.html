@@ -27,6 +27,7 @@
 			<li class="active"><a href="#buynow" data-toggle="tab">Buy Now</a></li>
 			<li><a href="#cart" data-toggle="tab">Add to Cart</a></li>
 			<li><a href="#donate" data-toggle="tab">Donate</a></li>
+			<li><a href="#subscribe" data-toggle="tab">Subscribe</a></li>
 			<li><a href="#qr" data-toggle="tab">QR Codes</a></li>
 		</ul>
 
@@ -232,6 +233,71 @@
 				</div>
 			</div>
 
+
+			<div id="subscribe" class="tab-pane example">
+				<p>Subscribe buttons can be used to set up payment subscriptions with your users <a href="#subscribeModal" class="edit" role="button" data-toggle="modal" data-keyboard="true"><span class="icon icon-edit"></span> Customize</a></p>
+
+<pre><code>&lt;script src="paypal-button.min.js?merchant=YOUR_MERCHANT_ID"
+    data-button="subscribe"
+    data-name="My product"
+    data-a3="1.00"
+    data-p3="1"
+    data-t3="M"
+&gt;&lt;/script&gt;</code></pre>
+
+
+				<div id="subscribeModal" class="editable modal hide fade" role="dialog" aria-hidden="true">
+					<form action="#" class="modal-body form-horizontal">
+						<input type="hidden" name="button" value="subscribe" />
+						<div class="control-group">
+							<label class="control-label" for="buyNowMerchant">Merchant</label>
+							<div class="controls">
+								<input type="text" id="buyNowMerchant" name="business" required="required" value="" autocomplete="off" />
+								<span class="help-inline">Email address or merchant ID</span>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="buyNowName">Name</label>
+							<div class="controls">
+								<input type="text" id="buyNowName" name="name" required="required" value="My product" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="buyNowRecurringAmount">Recurring amount</label>
+							<div class="controls">
+								<input type="text" id="buyNowRecurringAmount" name="a3" value="" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="buyNowNumberOfPeriods">Number of  Periods</label>
+							<div class="controls">
+								<input type="text" id="buyNowNumberOfPeriods" name="p3" value="" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="buyNowPeriodType">Type of Period</label>
+							<div class="controls">
+								<input type="text" id="buyNowPeriodType" name="t3" value="" autocomplete="off" />
+							</div>
+						</div>
+					</form>
+
+					<div class="modal-footer">
+						<button class="btn" data-dismiss="modal">Close</button>
+    					<button class="btn btn-primary" data-modal-save="true">Update</button>
+  					</div>
+				</div>
+
+				<div class="tryit">
+					<script src="dist/paypal-button.min.js?merchant="
+					    data-button="subscribe"
+					    data-name="My product!"
+					    data-a3="1.00"
+					    data-p3="1"
+					    data-t3="M"
+					></script>
+				</div>
+			</div>
 
 
 			<div id="qr" class="tab-pane example">
