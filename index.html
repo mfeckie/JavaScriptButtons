@@ -89,6 +89,15 @@
 								<input type="text" id="buyNowCallback" name="callback" placeholder="http://mysite.com/callback" value="" autocomplete="off" />
 							</div>
 						</div>
+						<div class="control-group">
+							<label class="control-label" for="environment">Environment</label>
+							<div class="controls">
+								<label class="checkbox">
+								  <input type="checkbox" name="env" value="sandbox">
+								  Sandbox
+								</label>
+							</div>
+						</div>
 					</form>
 
 					<div class="modal-footer">
@@ -166,6 +175,15 @@
 								<input type="text" id="buyNowCallback" name="callback" value="" autocomplete="off" placeholder="http://mysite.com/callback" />
 							</div>
 						</div>
+						<div class="control-group">
+							<label class="control-label" for="environment">Environment</label>
+							<div class="controls">
+								<label class="checkbox">
+								  <input type="checkbox" name="env" value="sandbox">
+								  Sandbox
+								</label>
+							</div>
+						</div>
 					</form>
 					<div class="modal-footer">
 						<button class="btn" data-dismiss="modal">Close</button>
@@ -237,6 +255,15 @@
 							<label class="control-label" for="buyNowCallback">Callback URL</label>
 							<div class="controls">
 								<input type="text" id="buyNowCallback" name="callback" placeholder="http://mysite.com/callback" value="" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="environment">Environment</label>
+							<div class="controls">
+								<label class="checkbox">
+								  <input type="checkbox" name="env" value="sandbox">
+								  Sandbox
+								</label>
 							</div>
 						</div>
 					</form>
@@ -313,6 +340,15 @@
 							<label class="control-label" for="buyNowCallback">Callback URL</label>
 							<div class="controls">
 								<input type="text" id="buyNowCallback" name="callback" placeholder="http://mysite.com/callback" value="" autocomplete="off" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="environment">Environment</label>
+							<div class="controls">
+								<label class="checkbox">
+								  <input type="checkbox" name="env" value="sandbox">
+								  Sandbox
+								</label>
 							</div>
 						</div>
 					</form>
@@ -393,6 +429,15 @@
 								<input type="text" id="buyNowCallback" name="callback" placeholder="http://mysite.com/callback" value="" autocomplete="off" />
 							</div>
 						</div>
+						<div class="control-group">
+							<label class="control-label" for="environment">Environment</label>
+							<div class="controls">
+								<label class="checkbox">
+								  <input type="checkbox" name="env" value="sandbox">
+								  Sandbox
+								</label>
+							</div>
+						</div>
 					</form>
 
 					<div class="modal-footer">
@@ -412,7 +457,7 @@
 			</div>
 
 		</div>
-		<p><em>Important:</em> Payments made using this code will be live and not test payments.</p>
+		<p><em>Important:</em> Unless you enable the sandbox environment all payments made using this code will be live and not test payments.</p>
 
 
 		<h3 id="addbutton">Add the button to your site</h3>
@@ -443,10 +488,12 @@
 				<p>Copy and paste the HTML snippet you customized above, and you're ready to start selling!</p>
 			</li>
 		</ol>
+		
+		<h3>Environment</h3>
+		<p>In order to test your implementation before going live you can use our sandbox environment. Please check the <a href="http://developer.paypal.com/">Developer Portal</a> for further information.</p>
 
 		<h3>Callback</h3>
 		<p>On completion of a transaction you can get a payment notification (<a href="https://www.x.com/developers/paypal/documentation-tools/ipn/integration-guide/IPNIntro">IPN</a>) on a callback URL you specify using the callback attribute. An IPN simulator is <a href="https://developer.paypal.com/webapps/developer/applications/ipn_simulator">available on the sandbox</a> to help you test your integration.</p>
-
 		<h3>Customization</h3>
 		<p>For advanced needs, there's a JavaScript API that can be used to pragmatically create buttons, localization support, and the ability to create user-editable inputs. Find out how in the <a href="https://github.com/paypal/JavaScriptButtons#editable-fields">README</a> file.
 
