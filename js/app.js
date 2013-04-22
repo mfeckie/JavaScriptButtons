@@ -41,10 +41,18 @@
 		// Build a map out of the form data
 		for (i = 0, len = inputs.length; i < len; i++) {
 			input = $(inputs[i]);
-
-			data[input.attr('name')] = {
-				value: input.val()
-			};
+			
+			if(input.is(':checkbox')) {
+				if(input.is(':checked')) {
+					data[input.attr('name')] = {
+						value: input.val()
+					};
+				}
+			} else {
+				data[input.attr('name')] = {
+					value: input.val()
+				};
+			}
 		}
 
 		// Create a script tag to use as the HTML
