@@ -75,6 +75,10 @@ form {
 	padding: 35px 20px 20px;
 }
 
+form.modal-body {
+  max-height: 500px;
+}
+
 @media (min-width: 0) and (max-width: 660px) {
 	.nav-tabs > li > a {
 		padding: 8px;
