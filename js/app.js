@@ -41,7 +41,7 @@
 		// Build a map out of the form data
 		for (i = 0, len = inputs.length; i < len; i++) {
 			input = $(inputs[i]);
-			
+
 			if(input.is(':checkbox')) {
 				if(input.is(':checked')) {
 					data[input.attr('name')] = {
@@ -87,6 +87,11 @@
 
 		// Close the modal
 		modal.modal('hide');
+
+		// Track Events
+		if (data.button) {
+			_gaq.push(['_trackEvent', 'JavaScriptButtons', data.button.value]);
+		}
 	});
 
 }());
