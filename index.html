@@ -519,7 +519,7 @@
 				<p>Copy and paste the HTML snippet you customized above, and you're ready to start selling!</p>
 			</li>
 		</ol>
-		
+
 		<h3>Environment</h3>
 		<p>In order to test your implementation before going live you can use our sandbox environment. Please check the <a href="http://developer.paypal.com/">Developer Portal</a> for further information.</p>
 
@@ -537,6 +537,17 @@
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script type='text/javascript'>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-36123826-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 	<script src="js/app.js"></script>
 </body>
 </html>
