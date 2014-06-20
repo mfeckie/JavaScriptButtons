@@ -57,6 +57,7 @@
 
 		// Create a script tag to use as the HTML
 		el = document.createElement('script');
+		el.setAttribute('async', 'async');
 
 		if (data.button && data.button.value === 'cart') {
 			el.src = 'https://www.paypalobjects.com/js/external/paypal-button-minicart.min.js?merchant=' + data.business.value;
