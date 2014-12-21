@@ -12,13 +12,12 @@ Perfect for use with Express Checkout or other API-based solutions
 
 ```html
 <script async src="paypal-button.min.js?merchant=YOUR_MERCHANT_ID"
-    data-button="buynow"
+    data-button="button"
+    data-type="button"
 ></script>
 ```
 
-Any type of button may be used: `buynow`, `cart`, `donate`, or `subscribe`.
-
-
+Any type of button may be used: `button`,`buynow`, `cart`, `donate`, or `subscribe`.
 
 ## PayPal Payments Standard Buttons
 
@@ -31,7 +30,7 @@ Buy Now buttons are for single item purchases.
 ```html
 <script async src="paypal-button.min.js?merchant=YOUR_MERCHANT_ID"
     data-button="buynow"
-    data-type="form"
+    data-type="buynow"
     data-name="My product"
     data-amount="1.00"
 ></script>
@@ -46,7 +45,7 @@ Add To Cart buttons let users add multiple items to their PayPal cart.
 ```html
 <script async src="paypal-button.min.js?merchant=YOUR_MERCHANT_ID"
     data-button="cart"
-    data-type="form"
+    data-type="cart"
     data-name="Product in your cart"
     data-amount="1.00"
 ></script>
@@ -70,7 +69,7 @@ Donation buttons let you accept donations from your users.
 ```html
 <script async src="paypal-button.min.js?merchant=YOUR_MERCHANT_ID"
     data-button="donate"
-    data-type="form"
+    data-type="donate"
     data-name="My donation"
     data-amount="1.00"
 ></script>
@@ -82,13 +81,17 @@ Subscribe buttons let you set up payment subscriptions.
 ```html
 <script async src="paypal-button.min.js?merchant=YOUR_MERCHANT_ID"
     data-button="subscribe"
-    data-type="form"
+    data-type="subscribe"
     data-name="My product"
     data-amount="1.00"
     data-recurrence="1"
     data-period="M"
 ></script>
 ```
+The `data-recurrence` attribute specifies how many 'units' the subscription lasts for, while `data-period` sets the units `M is Month, D is Days etc`.  See [Recurring Payment Buttons](https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/#id08A6HI00JQU) for more information.
+
+If you need payments to recur, add `data-src="1"`
+
 
 ## PayPal Payments Standard Features
 
@@ -107,8 +110,9 @@ All of PayPal's [HTML button variables](https://developer.paypal.com/webapps/dev
 * `data-locale` The desired locale of the PayPal site.
 * `data-callback` The IPN notify URL to be called on completion of the transaction.
 * `data-host` The PayPal host to checkout in, e.g. `www.sandbox.paypal.com` (defaults to 'www.paypal.com').
-* `data-type` The type of button to render. `button` for a plain button (default), `form` to create a button with a PayPal Payments Standard HTML form, or `qr` to create a PayPal Payments Standard compatible QR code.
-
+* `data-type` The type of button to render. `button` for a plain button (default), other options include `subscribe`, `donate`, `form`, `cart` and `qr`
+* `data-no_shipping` Whether the item requires an address `0` - prompt, but don't require `1` do not prompt `2` prompt and require
+* `data-custom` Pass through variable for your own tracking purposes, up to 256 characters
 
 ### Editable inputs
 Creating editable inputs is easy. Just add `-editable` to the name of your variable, e.g. `data-quantity-editable`, and an input field will magically appear for your users.
