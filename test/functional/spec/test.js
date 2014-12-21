@@ -64,7 +64,7 @@ describe('Test page button counter', function () {
 	});
 
 	it('Should have two subscribe buttons', function () {
-		buttons.subscribe.should.equal(3);
+		buttons.subscribe.should.equal(4);
 	});
 });
 
@@ -203,7 +203,7 @@ describe('Styled buttons', function () {
 	});
 
 	it('Should have primary buttons', function () {
-		primary.length.should.equal(20);
+		primary.length.should.equal(21);
 	});
 
 	it('Should have secondary buttons', function () {
@@ -234,4 +234,50 @@ describe('Options buttons', function () {
 		selects[1].options[0].value.should.equal('Tiny');
 	});
 
+});
+
+describe('Subscription buttons', function () {
+    it('Can have a recurrence field', function () {
+        var recurrent = document.getElementById('subscribe-recur').querySelector('[name="src"]');
+        recurrent.value.should.equal('1');
+    });
+
+    it('Should set command to _xclick-subscriptions', function () {
+        var cmd = document.getElementById('subscribe-recur').querySelector('[name="cmd"]');
+        cmd.value.should.equal('_xclick-subscriptions');
+    });
+});
+
+describe('Donate button', function () {
+    it('Should set the command to _donations', function () {
+        var cmd = document.getElementById('donate-sm').querySelector('[name="cmd"]');
+        cmd.value.should.equal('_donations');
+    });
+});
+
+describe('Buy now button', function () {
+    it('Should set the command to _xclick', function () {
+        var cmd = document.getElementById('buynow-sm').querySelector('[name="cmd"]');
+        cmd.value.should.equal('_xclick');
+    });
+});
+
+describe('Cart buttons', function () {
+    it('Should set the command to _cart', function () {
+        var cmd = document.getElementById('cart-sm').querySelector('[name="cmd"]');
+        cmd.value.should.equal('_cart');
+    });
+});
+describe('Hosted buttons', function () {
+    it('Should set the command to _s-xclick', function () {
+        var cmd = document.getElementById('button-hosted').querySelector('[name="cmd"]');
+        cmd.value.should.equal('_s-xclick');
+    });
+});
+
+describe('Sandbox environment', function () {
+    it('Should set the url to sandbox environment', function () {
+        var sandbox = document.getElementById('sandbox').getElementsByTagName('form')[0];
+        sandbox.action.should.equal('https://www.sandbox.paypal.com/cgi-bin/webscr');
+    });
 });
